@@ -27,4 +27,4 @@ jobs:
         
     - name: Use1 Skopeo Tools Sync Image to Docker Hub
       run: |
-         skopeo copy docker://rancher/alpine:latest docker://crpi-3c1izth856nemi5l.cn-beijing.personal.cr.aliyuncs.com/cloudtest123/alpine:latest
+         skopeo copy docker://library/alpine:latest docker://crpi-3c1izth856nemi5l.cn-beijing.personal.cr.aliyuncs.com/cloudtest123/alpine:latest
