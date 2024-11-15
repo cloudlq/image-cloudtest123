@@ -20,11 +20,11 @@ jobs:
     - name: Login to Docker Hub
       uses: docker/login-action@v2.2.0
       with:
-        registry: registry.cn-hangzhou.aliyuncs.com
-        username: 正牌小李子
-        password: 1q2w3e4r@.
+        registry: registry.cn-beijing.aliyuncs.com
+        username: 成都岁壳科技有限公司
+        password: Qq123456@~
         logout: false
         
     - name: Use1 Skopeo Tools Sync Image to Docker Hub
       run: |
-         skopeo copy docker://rancher/shell:v0.1.18 docker://registry.cn-hangzhou.aliyuncs.com/testltr/rancher-shell:v0.1.18
+         skopeo copy docker://rancher/shell:v0.1.18 docker://registry.cn-beijing.aliyuncs.com/cloud1/rancher-shell:v0.1.18
