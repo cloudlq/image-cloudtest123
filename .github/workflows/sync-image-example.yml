@@ -1,38 +1,31 @@
-name: Sync Image to Aliyun Example
+name: Sync Image to Aliyun  Example
 
 on:
   push:
-    branches:
-      - "main"
+    branches: [ "main" ]
   pull_request:
-    branches:
-      - "main"
+    branches: [ "main" ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
+    - name: Git pull
       uses: actions/checkout@v3
-
+      
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2.9.1
 
     - name: Login to Docker Hub
       uses: docker/login-action@v2.2.0
       with:
-        registry: registry.hub.docker.com
-        username: ${{ secrets.DOCKER_HUB_USERNAME }}
-        password: ${{ secrets.DOCKER_HUB_PASSWORD }}
-
-    - name: Login to Aliyun Container Registry
-      uses: docker/login-action@v2.2.0
-      with:
         registry: registry.cn-hangzhou.aliyuncs.com
-        username: ${{ secrets.ALIYUN_REGISTRY_USERNAME }}
-        password: ${{ secrets.ALIYUN_REGISTRY_PASSWORD }}
-
-    - name: Use Skopeo Tools to Sync Image to Aliyun
+        username: 15202821880
+        password: Qq123456@~ 
+        logout: false
+        
+    - name: Use1 Skopeo Tools Sync Image to Docker Hub
       run: |
-        skopeo copy docker://docker.io/hslr/sun-panel:1.4.0 docker://registry.cn-hangzhou.aliyuncs.com/weiyigeek/sun-panel:1.4.0
+         skopeo copy docker://rancher/shell:v0.1.18 docker://registry.cn-hangzhou.aliyuncs.com/cloudtest123/rancher-shell:v0.1.18
+
